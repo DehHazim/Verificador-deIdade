@@ -14,27 +14,29 @@ function verificar() {
     if (fsex[0].checked) {
       gênero = 'Homem'
       if (idade >=0 && idade < 12) {
-         img.setAttribute('src', 'foto-bebe-h.png')
+         img.setAttribute('src', 'foto-menino.png')
       } else if (idade < 21) {
-         img.setAttribute('src', 'foto-jovem-h.png')
+         img.setAttribute('src', 'foto-jovem.png')
       } else if (idade < 59) {
-         img.setAttribute('src', 'foto-homem.png')
+         img.setAttribute('src', 'foto-homem-h.png')
       } else {
-         img.setAttribute('src', 'foto-idoso.png')
+         img.setAttribute('src', 'foto-idoso-h.png')
       }
     } else if (fsex[1].checked) {
       gênero = 'Mulher'
       if (idade >=0 && idade < 12) {
-         img.setAttribute('src', 'foto-bebe-m.png')
+         img.setAttribute('src', 'foto-menina.png')
       } else if (idade < 21) {
-         img.setAttribute('src', 'foto-jovem-m.png')
+         img.setAttribute('src', 'foto-jovem-menina.png')
       } else if (idade < 59) {
-         img.setAttribute('src', 'foto-mulher.png')
+         img.setAttribute('src', 'foto-mulher-m.png')
       } else {
-         img.setAttribute('src', 'foto-idosa.png')
+         img.setAttribute('src', 'foto-idosa-m.png')
       }
     }
-    res.textAlign = 'center' 
+    res.style.textAlign = 'center' 
+    img.style.display = 'block'    // faz a imagem se comportar como um bloco
+    img.style.margin = '10px auto'
     res.innerHTML =  `Detectamos ${gênero} com ${idade} anos.`
     res.appendChild(img)
    }
